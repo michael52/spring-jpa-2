@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.LocalTime;
-import java.util.Date;
 
 @Entity
 public class Book implements Serializable{
