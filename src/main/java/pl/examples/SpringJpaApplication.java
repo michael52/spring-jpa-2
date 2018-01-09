@@ -18,6 +18,7 @@ public class SpringJpaApplication
         Book book = new Book("123123223", "Fale i anteny", "Jarosław Szóstka");
         bookDao.save(book);
 
+
         Book bookFromDb = bookDao.get(1L);
         System.out.println(bookFromDb);
         ctx.close();
