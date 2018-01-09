@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.time.LocalTime;
+import java.util.Date;
 
 @Entity
 public class Book implements Serializable{
@@ -16,6 +18,8 @@ public class Book implements Serializable{
     private String title;
     private String author;
 
+    private String createDate;
+
     public Book() {
 
     }
@@ -24,6 +28,7 @@ public class Book implements Serializable{
         this.isbn = isbn;
         this.title = title;
         this.author = author;
+        this.createDate = LocalTime.now().toString();
     }
 
     public Long getId() {
@@ -58,6 +63,14 @@ public class Book implements Serializable{
         this.author = author;
     }
 
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -65,6 +78,7 @@ public class Book implements Serializable{
                 ", isbn='" + isbn + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
+                ", createDate='" + createDate + '\'' +
                 '}';
     }
 }
